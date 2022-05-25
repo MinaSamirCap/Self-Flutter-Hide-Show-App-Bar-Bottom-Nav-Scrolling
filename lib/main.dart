@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_bottom_nav_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_float_screen.dart';
-import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_tabs_bottom_nav_screen.dart';
+import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_tabs_bottom_nav_fab_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_tabs_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/home_screen.dart';
 
@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
         AppBarWithFloatScreen.routeName: (ctx) => const AppBarWithFloatScreen(),
         AppBarWithBottomNavScreen.routeName: (ctx) =>
             const AppBarWithBottomNavScreen(),
-        AppBarWithTabsBottomNavScreen.routeName: (ctx) =>
-            const AppBarWithTabsBottomNavScreen()
+        AppBarWithTabsBottomNavFabScreen.routeName: (ctx) =>
+            const AppBarWithTabsBottomNavFabScreen()
       },
     );
   }

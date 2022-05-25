@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_bottom_nav_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_float_screen.dart';
-import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_tabs_bottom_nav_screen.dart';
+import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_tabs_bottom_nav_fab_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_tabs_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/common_widgets.dart';
 
@@ -44,7 +44,7 @@ class HomeScreen extends StatelessWidget {
     } else if (index == 2) {
       return AppBarWithBottomNavScreen.routeName;
     } else if (index == 3) {
-      return AppBarWithTabsBottomNavScreen.routeName;
+      return AppBarWithTabsBottomNavFabScreen.routeName;
     } else {
       return AppBarWithTabsScreen.routeName;
     }

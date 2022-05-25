@@ -31,7 +31,7 @@ class _AppBarWithFloatScreenState extends State<AppBarWithFloatScreen> {
       body: Scaffold(
         body: NotificationListener<UserScrollNotification>(
           onNotification: (notification) {
-            _applyLogic(notification);
+            _applyLogicToHideFloatActionBtn(notification);
             /// Return true to cancel the notification bubbling. Return false to allow the
             /// notification to continue to be dispatched to further ancestors.
             return false;
@@ -53,7 +53,7 @@ class _AppBarWithFloatScreenState extends State<AppBarWithFloatScreen> {
     );
   }
 
-  void _applyLogic(UserScrollNotification notification) {
+  void _applyLogicToHideFloatActionBtn(UserScrollNotification notification) {
     if (notification.direction == ScrollDirection.forward) {
       if (!isFabVisible) setState(() => isFabVisible = true);
     } else if (notification.direction == ScrollDirection.reverse) {
