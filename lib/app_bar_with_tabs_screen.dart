@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/common_widgets.dart';
 
 class AppBarWithTabsScreen extends StatefulWidget {
   static const routeName = "app-bar-with-tabs-screen";
@@ -68,7 +69,7 @@ class _AppBarWithTabsScreenState extends State<AppBarWithTabsScreen> {
                 return Container(
                   // check if it the last item in list
                   margin: EdgeInsets.only(bottom: index == 59 ? 0 : 8),
-                  child: _buildCard(index),
+                  child: buildCard("item $index"),
                 );
               }, childCount: 60),
             ),
@@ -76,13 +77,6 @@ class _AppBarWithTabsScreenState extends State<AppBarWithTabsScreen> {
         ]);
       }),
     );
-  }
-
-  Widget _buildCard(int index) {
-    return Card(
-        child: Container(
-            padding: const EdgeInsets.all(15),
-            child: Text("item ${index + 1}")));
   }
 
   TabBar _buildTabBar() {

@@ -26,11 +26,7 @@ class HomeScreen extends StatelessWidget {
         onTap: () {
           _openScreen(ctx, getRootName(index));
         },
-        child: Card(
-          child: Container(
-              padding: const EdgeInsets.all(15),
-              child: Text(getRootName(index))),
-        ));
+        child: buildCard(getRootName(index)));
   }
 
   Widget _buildSeparator(int index) {
