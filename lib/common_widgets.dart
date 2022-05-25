@@ -9,11 +9,12 @@ Widget buildCard(String txt) {
       child: Container(padding: const EdgeInsets.all(15), child: Text(txt)));
 }
 
-TabBar buildTabBar() {
-  return const TabBar(
+TabBar buildTabBar(TabController? tabController) {
+  return TabBar(
+      controller: tabController,
       indicatorColor: Colors.white,
       indicatorWeight: 5,
-      tabs: [
+      tabs: const [
         Tab(icon: Icon(Icons.home), text: "Home"),
         Tab(icon: Icon(Icons.list_alt), text: "Feed"),
         Tab(icon: Icon(Icons.person), text: "Profile"),

@@ -50,7 +50,7 @@ class _AppBarWithTabsBottomNavFabScreenState
                   floating: true,
                   snap: true,
                   forceElevated: innerBoxIsScrolled,
-                  bottom: buildTabBar(),
+                  bottom: buildTabBar(null),
                 ),
               ),
             ),

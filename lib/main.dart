@@ -3,6 +3,7 @@ import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_float_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_tabs_bottom_nav_fab_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_tabs_screen.dart';
+import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/full_scrollable_enhanced_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/home_screen.dart';
 
 void main() {
@@ -25,7 +26,9 @@ class MyApp extends StatelessWidget {
         AppBarWithBottomNavScreen.routeName: (ctx) =>
             const AppBarWithBottomNavScreen(),
         AppBarWithTabsBottomNavFabScreen.routeName: (ctx) =>
-            const AppBarWithTabsBottomNavFabScreen()
+            const AppBarWithTabsBottomNavFabScreen(),
+        FullScrollableEnhancedScreen.routeName: (ctx) =>
+            const FullScrollableEnhancedScreen()
       },
     );
   }

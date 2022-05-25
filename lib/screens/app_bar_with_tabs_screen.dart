@@ -31,7 +31,7 @@ class _AppBarWithTabsScreenState extends State<AppBarWithTabsScreen> {
                   snap: true,
                   pinned: true,
                   forceElevated: innerBoxIsScrolled,
-                  bottom: buildTabBar(),
+                  bottom: buildTabBar(null),
                 ),
               ),
             ),
