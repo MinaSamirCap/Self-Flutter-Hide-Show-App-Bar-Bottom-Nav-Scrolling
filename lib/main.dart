@@ -32,11 +32,16 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-      ),
-      body: Center(
-        child: Text(title),
+      body: NestedScrollView(
+        floatHeaderSlivers: true,
+        headerSliverBuilder: (ctx, innerBoxIsScrolled) => [
+          SliverAppBar(
+            title: Text(title),
+            floating: true,
+            snap: true,
+          ),
+        ],
+        body: _buildListBody(),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {},
@@ -45,4 +50,37 @@ class _MyHomePageState extends State<MyHomePage> {
       ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
+
+  Widget _buildListBody() {
+    return ListView.separated(
+        padding: const EdgeInsets.all(12),
+        itemBuilder: (ctx, index) => _buildCard(index),
+        separatorBuilder: (ctx, index) => _buildSeparator(index),
+        itemCount: 60);
+  }
+
+  Widget _buildCard(int index) {
+    return Card(
+        child: Container(
+            padding: const EdgeInsets.all(15),
+            child: Text("item ${index + 1}")));
+  }
+
+  Widget _buildSeparator(int index) {
+    return const SizedBox(height: 8);
+  }
 }
+
+/// main steps
+/// 1- wrap the body of scaffold in a NestedScrollView ...
+/// 2- convert AppBar to SliverAppBar ...
+///
+/// to enable the app bar to float while we are scrolling
+/// 1- in the SliverAppBar we need to set [floating: true]
+/// 2- Also in NestedScrollView we need to set [floatHeaderSlivers: true]
+///
+/// if we want the app bar to snap we need to set [snap: true]
+/// if we need to set snap to true we have to set float to true also ...
+///
+/// if we want the app bar only snip after user leave the touch of the scrolling
+/// in NestedScrollView we need to remove [floatHeaderSlivers: true]
