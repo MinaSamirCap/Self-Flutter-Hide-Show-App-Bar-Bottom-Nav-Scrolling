@@ -4,7 +4,7 @@ import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/common_widge
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/scroll_to_hide_widget.dart';
 
 class AppBarWithTabsBottomNavFabScreen extends StatefulWidget {
-  static const routeName = "app-bar-with-tabs-bottom-nav-screen";
+  static const routeName = "app-bar-with-tabs-bottom-nav-fab-screen";
 
   const AppBarWithTabsBottomNavFabScreen({Key? key}) : super(key: key);
 
@@ -15,7 +15,7 @@ class AppBarWithTabsBottomNavFabScreen extends StatefulWidget {
 
 class _AppBarWithTabsBottomNavFabScreenState
     extends State<AppBarWithTabsBottomNavFabScreen> {
-  String title = "App Bar With Tabs And Bottom Nav";
+  String title = "App Bar With Tabs And Bottom Nav Fab";
 
   late ScrollController scrollController;
   bool isFabVisible = true;
