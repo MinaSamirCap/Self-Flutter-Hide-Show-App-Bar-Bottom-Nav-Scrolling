@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/app_bar_with_tabs_screen.dart';
+import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_float_screen.dart';
+import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_tabs_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/home_screen.dart';
 
 void main() {
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
       ),
       home: const HomeScreen(),
       routes: {
-        AppBarWithTabsScreen.routeName: (ctx) => const AppBarWithTabsScreen()
+        AppBarWithTabsScreen.routeName: (ctx) => const AppBarWithTabsScreen(),
+        AppBarWithFloatScreen.routeName: (ctx) => const AppBarWithFloatScreen()
       },
     );
   }
