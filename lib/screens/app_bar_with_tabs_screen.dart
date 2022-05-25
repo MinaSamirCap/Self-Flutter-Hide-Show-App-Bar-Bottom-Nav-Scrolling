@@ -31,7 +31,7 @@ class _AppBarWithTabsScreenState extends State<AppBarWithTabsScreen> {
                   snap: true,
                   pinned: true,
                   forceElevated: innerBoxIsScrolled,
-                  bottom: _buildTabBar(),
+                  bottom: buildTabBar(),
                 ),
               ),
             ),
@@ -77,18 +77,6 @@ class _AppBarWithTabsScreenState extends State<AppBarWithTabsScreen> {
         ]);
       }),
     );
-  }
-
-  TabBar _buildTabBar() {
-    return const TabBar(
-        indicatorColor: Colors.white,
-        indicatorWeight: 5,
-        tabs: [
-          Tab(icon: Icon(Icons.home), text: "Home"),
-          Tab(icon: Icon(Icons.list_alt), text: "Feed"),
-          Tab(icon: Icon(Icons.person), text: "Profile"),
-          Tab(icon: Icon(Icons.settings), text: "Settings"),
-        ]);
   }
 }
 

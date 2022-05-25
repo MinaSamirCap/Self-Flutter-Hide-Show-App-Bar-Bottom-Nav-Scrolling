@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/common_widgets.dart';
+import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/scroll_to_hide_widget.dart';
 
 class AppBarWithTabsBottomNavScreen extends StatefulWidget {
   static const routeName = "app-bar-with-tabs-bottom-nav-screen";
@@ -15,12 +16,27 @@ class _AppBarWithTabsBottomNavScreenState
     extends State<AppBarWithTabsBottomNavScreen> {
   String title = "App Bar With Tabs And Bottom Nav";
 
+  late ScrollController scrollController;
+
+  @override
+  void initState() {
+    scrollController = ScrollController();
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    scrollController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 4,
       child: Scaffold(
         body: NestedScrollView(
+          controller: scrollController,
           floatHeaderSlivers: true,
           headerSliverBuilder: (ctx, innerBoxIsScrolled) => [
             SliverOverlapAbsorber(
@@ -32,7 +48,7 @@ class _AppBarWithTabsBottomNavScreenState
                   floating: true,
                   snap: true,
                   forceElevated: innerBoxIsScrolled,
-                  bottom: _buildTabBar(),
+                  bottom: buildTabBar(),
                 ),
               ),
             ),
@@ -51,7 +67,7 @@ class _AppBarWithTabsBottomNavScreenState
           tooltip: "Dummy",
           child: const Icon(Icons.title),
         ),
-        bottomNavigationBar: buildBottomNavigation(),
+        bottomNavigationBar: _buildBottomNavigation(),
       ),
     );
   }
@@ -81,16 +97,11 @@ class _AppBarWithTabsBottomNavScreenState
     );
   }
 
-  TabBar _buildTabBar() {
-    return const TabBar(
-        indicatorColor: Colors.white,
-        indicatorWeight: 5,
-        tabs: [
-          Tab(icon: Icon(Icons.home), text: "Home"),
-          Tab(icon: Icon(Icons.list_alt), text: "Feed"),
-          Tab(icon: Icon(Icons.person), text: "Profile"),
-          Tab(icon: Icon(Icons.settings), text: "Settings"),
-        ]);
+  Widget _buildBottomNavigation() {
+    return ScrollToHideWidget(
+      scrollController: scrollController,
+      child: buildBottomNavigation(),
+    );
   }
 }
 
