@@ -45,11 +45,7 @@ class _AppBarWithBottomNavScreenState extends State<AppBarWithBottomNavScreen> {
   Widget _buildBottomNavigation() {
     return ScrollToHideWidget(
       scrollController: scrollController,
-      child: BottomNavigationBar(items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-        BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Fav"),
-        BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings")
-      ]),
+      child: buildBottomNavigation(),
     );
   }
 }
