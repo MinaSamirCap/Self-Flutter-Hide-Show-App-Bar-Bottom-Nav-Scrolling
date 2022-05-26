@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/common_widgets.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/full_scrollable_content_screen.dart';
 
-class FullScrollableEnhancedScreen extends StatefulWidget {
-  static const routeName = "full-scrollable-enhanced-screen";
+class ScrollingListenerScreen extends StatefulWidget {
+  static const routeName = "scrolling-listener-screen";
 
-  const FullScrollableEnhancedScreen({Key? key}) : super(key: key);
+  const ScrollingListenerScreen({Key? key}) : super(key: key);
 
   @override
-  State<FullScrollableEnhancedScreen> createState() =>
-      _FullScrollableEnhancedScreenState();
+  State<ScrollingListenerScreen> createState() =>
+      _ScrollingListenerScreenState();
 }
 
-class _FullScrollableEnhancedScreenState
-    extends State<FullScrollableEnhancedScreen> with TickerProviderStateMixin {
-  final String title = "Full Scrollable Enhanced Screen";
+class _ScrollingListenerScreenState extends State<ScrollingListenerScreen>
+    with TickerProviderStateMixin {
+  final String title = "Scrolling Listener Screen";
   late TabController _tabController;
 
   @override
