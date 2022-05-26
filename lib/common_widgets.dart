@@ -1,3 +1,4 @@
+import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 
 Widget buildSeparator(int index) {
@@ -28,4 +29,58 @@ Widget buildBottomNavigation() {
     BottomNavigationBarItem(icon: Icon(Icons.favorite), label: "Fav"),
     BottomNavigationBarItem(icon: Icon(Icons.settings), label: "Settings")
   ]);
+}
+
+List<Widget> buildToolbarIcons() {
+  return <Widget>[
+    IconButton(
+      onPressed: () {},
+      icon: const Icon(Icons.search),
+      tooltip: "Search",
+    ),
+    IconButton(
+      onPressed: () {},
+      icon: getNotificationIcon(5),
+      tooltip: "Notification",
+    ),
+    buildPopupMenuBtn()
+  ];
+}
+
+Widget getNotificationIcon(int counter) {
+  return Badge(
+      showBadge: (counter > 0) ? true : false,
+      badgeContent: Text(
+        counter.toString(),
+        style: const TextStyle(color: Colors.white),
+      ),
+      child: const Icon(Icons.notifications),
+      badgeColor: Colors.red,
+      position: BadgePosition.topEnd());
+}
+
+Widget buildPopupMenuBtn() {
+  return PopupMenuButton<String>(
+      tooltip: "Show Menu",
+      onSelected: (item) {},
+      itemBuilder: (ctx) => [buildCalendarPopup(), buildLogoutPopup()]);
+}
+
+PopupMenuItem<String> buildLogoutPopup() =>
+    buildHomePopupWidget(Icons.exit_to_app, "Logout");
+
+PopupMenuItem<String> buildCalendarPopup() =>
+    buildHomePopupWidget(Icons.event, "Calendar");
+
+PopupMenuItem<String> buildHomePopupWidget(IconData icon, String txt) {
+  return PopupMenuItem<String>(
+      value: txt,
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: <Widget>[
+          Text(txt),
+          const SizedBox(width: 15),
+          Icon(icon, color: Colors.amber)
+        ],
+      ));
 }

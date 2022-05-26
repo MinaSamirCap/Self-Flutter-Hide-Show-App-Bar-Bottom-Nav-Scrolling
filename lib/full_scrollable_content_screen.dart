@@ -7,6 +7,7 @@ class FullScrollableContentScreen extends StatefulWidget {
   final SliverChildBuilderDelegate delegate;
   final ScrollController? scrollController;
   final PreferredSizeWidget? bottomAppBarWidget;
+  final List<Widget>? actions;
   final Widget? bottomNavigationBar;
   final FloatingActionButton? floatActionButton;
   final Function(bool)? shouldShowFabCallback;
@@ -16,6 +17,7 @@ class FullScrollableContentScreen extends StatefulWidget {
       required this.delegate,
       this.scrollController,
       this.bottomAppBarWidget,
+      this.actions,
       this.bottomNavigationBar,
       this.floatActionButton,
       this.shouldShowFabCallback,
@@ -61,6 +63,7 @@ class _FullScrollableContentScreenState
                 snap: true,
                 forceElevated: innerBoxIsScrolled,
                 bottom: widget.bottomAppBarWidget,
+                actions: widget.actions,
               ),
             ),
           ),

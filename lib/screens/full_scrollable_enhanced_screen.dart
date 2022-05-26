@@ -32,6 +32,7 @@ class _FullScrollableEnhancedScreenState
       bottomNavigationBar: buildBottomNavigation(),
       bottomAppBarWidget: buildTabBar(_tabController),
       floatActionButton: _buildFloatActionBtn(),
+      actions: buildToolbarIcons(),
     );
   }
 
