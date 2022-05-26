@@ -7,6 +7,8 @@ import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/full
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/home_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/scrolling_listener_screen.dart';
 
+import 'screens/full_scrollable_enhanced_refresh_indicator_paging_screen.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -31,7 +33,9 @@ class MyApp extends StatelessWidget {
         FullScrollableEnhancedScreen.routeName: (ctx) =>
             const FullScrollableEnhancedScreen(),
         ScrollingListenerScreen.routeName: (ctx) =>
-            const ScrollingListenerScreen()
+            const ScrollingListenerScreen(),
+        FullScrollableEnhancedRefreshIndicatorPagingScreen.routeName: (ctx) =>
+            const FullScrollableEnhancedRefreshIndicatorPagingScreen()
       },
     );
   }

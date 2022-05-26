@@ -4,7 +4,7 @@ import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/scroll_to_hi
 
 class FullScrollableContentScreen extends StatefulWidget {
   final Widget titleWidget;
-  final SliverChildBuilderDelegate delegate;
+  final SliverChildDelegate delegate;
   final ScrollController? scrollController;
   final PreferredSizeWidget? bottomAppBarWidget;
   final List<Widget>? actions;

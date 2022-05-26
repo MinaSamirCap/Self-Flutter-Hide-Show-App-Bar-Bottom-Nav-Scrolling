@@ -4,6 +4,7 @@ import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_tabs_bottom_nav_fab_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_tabs_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/common_widgets.dart';
+import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/full_scrollable_enhanced_refresh_indicator_paging_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/full_scrollable_enhanced_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/scrolling_listener_screen.dart';
 
@@ -22,7 +23,7 @@ class HomeScreen extends StatelessWidget {
       body: ListView.separated(
           itemBuilder: (ctx, index) => _buildTutorialCard(ctx, index),
           separatorBuilder: (ctx, index) => _buildSeparator(index),
-          itemCount: 6),
+          itemCount: 7),
     );
   }
 
@@ -51,6 +52,8 @@ class HomeScreen extends StatelessWidget {
       return FullScrollableEnhancedScreen.routeName;
     } else if (index == 5) {
       return ScrollingListenerScreen.routeName;
+    } else if (index == 6) {
+      return FullScrollableEnhancedRefreshIndicatorPagingScreen.routeName;
     } else {
       return AppBarWithTabsScreen.routeName;
     }
