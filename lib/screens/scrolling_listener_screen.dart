@@ -18,6 +18,7 @@ class _ScrollingListenerScreenState extends State<ScrollingListenerScreen>
   final String title = "Scrolling Listener Screen";
   late TabController _tabController;
   late ScrollController _scrollController;
+  bool _isFabVisible = true;
 
   @override
   void initState() {
@@ -42,7 +43,11 @@ class _ScrollingListenerScreenState extends State<ScrollingListenerScreen>
         bottomAppBarWidget: buildTabBar(_tabController),
         bottomNavigationBar: null,
         floatActionButton: null,
+        shouldShowFabCallback: (shouldShowFab) {
+          setState(() => _isFabVisible = shouldShowFab);
+        },
       ),
+      floatingActionButton: _isFabVisible ? _buildFloatActionBtn() : null,
       bottomNavigationBar: _buildBottomNavigation(),
     );
   }
@@ -60,8 +65,8 @@ class _ScrollingListenerScreenState extends State<ScrollingListenerScreen>
   FloatingActionButton _buildFloatActionBtn() {
     return FloatingActionButton(
       onPressed: () {},
-      tooltip: "LOL P:",
-      child: const Icon(Icons.height),
+      tooltip: "BOM BOM P:",
+      child: const Icon(Icons.flash_auto_outlined),
     );
   }
 

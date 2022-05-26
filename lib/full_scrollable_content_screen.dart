@@ -9,6 +9,7 @@ class FullScrollableContentScreen extends StatefulWidget {
   final PreferredSizeWidget? bottomAppBarWidget;
   final Widget? bottomNavigationBar;
   final FloatingActionButton? floatActionButton;
+  final Function(bool)? shouldShowFabCallback;
 
   const FullScrollableContentScreen(
       {required this.titleWidget,
@@ -17,6 +18,7 @@ class FullScrollableContentScreen extends StatefulWidget {
       this.bottomAppBarWidget,
       this.bottomNavigationBar,
       this.floatActionButton,
+      this.shouldShowFabCallback,
       Key? key})
       : super(key: key);
 
@@ -65,7 +67,11 @@ class _FullScrollableContentScreenState
         ],
         body: NotificationListener<UserScrollNotification>(
           onNotification: (notification) {
-            _applyLogicToHideFloatActionBtn(notification);
+            if (widget.floatActionButton != null) {
+              _applyLogicToHideOrShowFloatActionBtn(notification);
+            } else {
+              _fireFabCallback(notification);
+            }
 
             /// Return true to cancel the notification bubbling. Return false to allow the
             /// notification to continue to be dispatched to further ancestors.
@@ -109,11 +115,28 @@ class _FullScrollableContentScreenState
     );
   }
 
-  void _applyLogicToHideFloatActionBtn(UserScrollNotification notification) {
-    if (notification.direction == ScrollDirection.forward) {
+  void _applyLogicToHideOrShowFloatActionBtn(
+      UserScrollNotification notification) {
+    if (_isScrollingToTop(notification)) {
       if (!_isFabVisible) setState(() => _isFabVisible = true);
-    } else if (notification.direction == ScrollDirection.reverse) {
+    } else if (_isScrollingToBottom(notification)) {
       if (_isFabVisible) setState(() => _isFabVisible = false);
+    }
+  }
+
+  bool _isScrollingToTop(UserScrollNotification notification) =>
+      notification.direction == ScrollDirection.forward;
+
+  bool _isScrollingToBottom(UserScrollNotification notification) =>
+      notification.direction == ScrollDirection.reverse;
+
+  void _fireFabCallback(UserScrollNotification notification) {
+    if (widget.shouldShowFabCallback != null) {
+      if (_isScrollingToTop(notification)) {
+        widget.shouldShowFabCallback!(true);
+      } else if (_isScrollingToBottom(notification)) {
+        widget.shouldShowFabCallback!(false);
+      }
     }
   }
 }
