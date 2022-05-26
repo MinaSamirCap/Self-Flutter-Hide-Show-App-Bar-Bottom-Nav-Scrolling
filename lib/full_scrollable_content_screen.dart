@@ -4,19 +4,18 @@ import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/scroll_to_hi
 
 class FullScrollableContentScreen extends StatefulWidget {
   final Widget titleWidget;
-
-  //final Widget contentWidget;
-  final Widget bottomNavigationBar;
   final SliverChildBuilderDelegate delegate;
+  final ScrollController? scrollController;
   final PreferredSizeWidget? bottomAppBarWidget;
+  final Widget? bottomNavigationBar;
   final FloatingActionButton? floatActionButton;
 
   const FullScrollableContentScreen(
       {required this.titleWidget,
-      // required this.contentWidget,
-      required this.bottomNavigationBar,
       required this.delegate,
+      this.scrollController,
       this.bottomAppBarWidget,
+      this.bottomNavigationBar,
       this.floatActionButton,
       Key? key})
       : super(key: key);
@@ -33,7 +32,7 @@ class _FullScrollableContentScreenState
 
   @override
   void initState() {
-    scrollController = ScrollController();
+    scrollController = widget.scrollController ?? ScrollController();
     super.initState();
   }
 
@@ -80,11 +79,15 @@ class _FullScrollableContentScreenState
     );
   }
 
-  Widget _buildBottomNavigation() {
-    return ScrollToHideWidget(
-      scrollController: scrollController,
-      child: widget.bottomNavigationBar,
-    );
+  Widget? _buildBottomNavigation() {
+    if (widget.bottomNavigationBar != null) {
+      return ScrollToHideWidget(
+        scrollController: scrollController,
+        child: widget.bottomNavigationBar!,
+      );
+    } else {
+      return null;
+    }
   }
 
   Widget _buildListBody() {

@@ -27,8 +27,9 @@ class _FullScrollableEnhancedScreenState
   Widget build(BuildContext context) {
     return FullScrollableContentScreen(
       titleWidget: Text(title),
-      bottomNavigationBar: buildBottomNavigation(),
       delegate: _buildListDelegate(),
+      scrollController: null,
+      bottomNavigationBar: buildBottomNavigation(),
       bottomAppBarWidget: buildTabBar(_tabController),
       floatActionButton: _buildFloatActionBtn(),
     );
