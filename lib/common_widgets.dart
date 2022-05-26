@@ -84,3 +84,16 @@ PopupMenuItem<String> buildHomePopupWidget(IconData icon, String txt) {
         ],
       ));
 }
+
+Widget pagingLoadingWidget(bool isLoading) {
+  return AnimatedContainer(
+    curve: Curves.fastOutSlowIn,
+    padding: const EdgeInsets.all(10.0),
+    height: isLoading ? 55.0 : 0,
+    color: Colors.white,
+    child: const Center(
+      child: CircularProgressIndicator(),
+    ),
+    duration: const Duration(milliseconds: 300),
+  );
+}

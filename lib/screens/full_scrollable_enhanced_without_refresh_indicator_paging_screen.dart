@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/common_widgets.dart';
-import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/full_scrollable_content_screen.dart';
+import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/full_scrollable_content_refresh_indicator_paging_screen.dart';
 
-class FullScrollableEnhancedRefreshIndicatorPagingScreen
+class FullScrollableEnhancedWithoutRefreshIndicatorPagingScreen
     extends StatefulWidget {
   static const routeName =
-      "full-scrollable-enhanced-refresh-indicator-paging-screen";
+      "full-scrollable-enhanced-without-refresh-indicator-paging-screen";
 
-  const FullScrollableEnhancedRefreshIndicatorPagingScreen({Key? key})
+  const FullScrollableEnhancedWithoutRefreshIndicatorPagingScreen({Key? key})
       : super(key: key);
 
   @override
-  State<FullScrollableEnhancedRefreshIndicatorPagingScreen> createState() =>
-      _FullScrollableEnhancedRefreshIndicatorPagingScreenState();
+  State<FullScrollableEnhancedWithoutRefreshIndicatorPagingScreen>
+      createState() =>
+          _FullScrollableEnhancedWithoutRefreshIndicatorPagingScreenState();
 }
 
-class _FullScrollableEnhancedRefreshIndicatorPagingScreenState
-    extends State<FullScrollableEnhancedRefreshIndicatorPagingScreen>
+class _FullScrollableEnhancedWithoutRefreshIndicatorPagingScreenState
+    extends State<FullScrollableEnhancedWithoutRefreshIndicatorPagingScreen>
     with TickerProviderStateMixin {
-  final String title =
-      "Full Scrollable Enhanced Refresh Indicator Paging Screen";
+  final String title = "With Refresh Indicator Paging Screen";
   late TabController _tabController;
 
   @override
@@ -30,9 +30,10 @@ class _FullScrollableEnhancedRefreshIndicatorPagingScreenState
 
   @override
   Widget build(BuildContext context) {
-    return FullScrollableContentScreen(
+    return FullScrollableContentRefreshIndicatorPagingScreen(
       titleWidget: Text(title),
       delegate: _buildListDelegate(),
+      supportPaging: false,
       scrollController: null,
       bottomNavigationBar: buildBottomNavigation(),
       bottomAppBarWidget: buildTabBar(_tabController),

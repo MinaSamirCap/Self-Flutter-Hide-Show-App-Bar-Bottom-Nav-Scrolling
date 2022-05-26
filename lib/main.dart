@@ -4,10 +4,10 @@ import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_tabs_bottom_nav_fab_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/app_bar_with_tabs_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/full_scrollable_enhanced_screen.dart';
+import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/full_scrollable_enhanced_with_refresh_indicator_paging_screen.dart';
+import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/full_scrollable_enhanced_without_refresh_indicator_paging_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/home_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/scrolling_listener_screen.dart';
-
-import 'screens/full_scrollable_enhanced_refresh_indicator_paging_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -34,8 +34,12 @@ class MyApp extends StatelessWidget {
             const FullScrollableEnhancedScreen(),
         ScrollingListenerScreen.routeName: (ctx) =>
             const ScrollingListenerScreen(),
-        FullScrollableEnhancedRefreshIndicatorPagingScreen.routeName: (ctx) =>
-            const FullScrollableEnhancedRefreshIndicatorPagingScreen()
+        FullScrollableEnhancedWithRefreshIndicatorPagingScreen.routeName:
+            (ctx) =>
+                const FullScrollableEnhancedWithRefreshIndicatorPagingScreen(),
+        FullScrollableEnhancedWithoutRefreshIndicatorPagingScreen.routeName:
+            (ctx) =>
+                const FullScrollableEnhancedWithoutRefreshIndicatorPagingScreen()
       },
     );
   }
