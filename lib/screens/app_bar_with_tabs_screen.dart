@@ -19,7 +19,7 @@ class _AppBarWithTabsScreenState extends State<AppBarWithTabsScreen> {
       length: 4,
       child: Scaffold(
         body: NestedScrollView(
-          floatHeaderSlivers: true,
+          floatHeaderSlivers: false,
           headerSliverBuilder: (ctx, innerBoxIsScrolled) => [
             SliverOverlapAbsorber(
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(ctx),
@@ -27,8 +27,8 @@ class _AppBarWithTabsScreenState extends State<AppBarWithTabsScreen> {
                 top: false,
                 sliver: SliverAppBar(
                   title: Text(title),
-                  floating: true,
-                  snap: true,
+                  floating: false,
+                  snap: false,
                   pinned: true,
                   forceElevated: innerBoxIsScrolled,
                   bottom: buildTabBar(null),
