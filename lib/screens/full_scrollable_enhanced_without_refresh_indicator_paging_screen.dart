@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/common_widgets.dart';
-import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/full_scrollable_content_refresh_indicator_paging_screen.dart';
+import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/helper/common_widgets.dart';
+import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/extendable/full_scrollable_content_refresh_indicator_paging_screen.dart';
 
 class FullScrollableEnhancedWithoutRefreshIndicatorPagingScreen
     extends StatefulWidget {

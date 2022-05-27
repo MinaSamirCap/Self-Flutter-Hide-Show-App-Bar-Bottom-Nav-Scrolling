@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/common_widgets.dart';
-import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/scroll_to_hide_widget.dart';
+import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/helper/common_widgets.dart';
+import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/helper/scroll_to_hide_widget.dart';
 
 class AppBarWithBottomNavScreen extends StatefulWidget {
   static const routeName = "app-bar-with-bottom-nav-screen";
