@@ -86,6 +86,7 @@ class _FullScrollableFullCustomScreenState
           SliverOverlapAbsorber(
             handle: NestedScrollView.sliverOverlapAbsorberHandleFor(ctx),
             sliver: SliverSafeArea(
+              // you may need to remove this widget [SliverSafeArea] ...
               top: false,
               sliver: SliverAppBar(
                 title: widget.titleWidget,
