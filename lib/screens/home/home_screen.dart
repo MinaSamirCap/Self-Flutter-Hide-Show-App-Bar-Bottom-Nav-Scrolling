@@ -9,6 +9,7 @@ import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/full
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/full_scrollable_enhanced_without_refresh_indicator_paging_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/full_scrollable_full_custom_sample_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/full_scrollable_full_different_list_items_screen.dart';
+import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/full_scrollable_full_same_list_items_screen.dart';
 import 'package:self_flutter_hide_show_app_bar_bottom_nav_scrolling/screens/scrolling_listener_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -26,7 +27,7 @@ class HomeScreen extends StatelessWidget {
       body: ListView.separated(
           itemBuilder: (ctx, index) => _buildTutorialCard(ctx, index),
           separatorBuilder: (ctx, index) => _buildSeparator(index),
-          itemCount: 10),
+          itemCount: 11),
     );
   }
 
@@ -62,8 +63,10 @@ class HomeScreen extends StatelessWidget {
       return FullScrollableEnhancedWithRefreshIndicatorPagingScreen.routeName;
     } else if (index == 8) {
       return FullScrollableFullCustomSampleScreen.routeName;
-    }else if (index == 9) {
+    } else if (index == 9) {
       return FullScrollableFullDifferentListItemsScreen.routeName;
+    } else if (index == 10) {
+      return FullScrollableFullSameListItemsScreen.routeName;
     } else {
       return AppBarWithTabsScreen.routeName;
     }
