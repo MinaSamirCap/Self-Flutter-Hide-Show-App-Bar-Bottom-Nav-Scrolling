@@ -19,7 +19,7 @@ class _AppBarWithTabsScreenState extends State<AppBarWithTabsScreen> {
       length: 4,
       child: Scaffold(
         body: NestedScrollView(
-          floatHeaderSlivers: false,
+          floatHeaderSlivers: true,
           headerSliverBuilder: (ctx, innerBoxIsScrolled) => [
             SliverOverlapAbsorber(
               handle: NestedScrollView.sliverOverlapAbsorberHandleFor(ctx),
@@ -27,9 +27,9 @@ class _AppBarWithTabsScreenState extends State<AppBarWithTabsScreen> {
                 top: false,
                 sliver: SliverAppBar(
                   title: Text(title),
-                  floating: false,
-                  snap: false,
-                  pinned: true,
+                  floating: true,
+                  snap: true,
+                  pinned: false,
                   forceElevated: innerBoxIsScrolled,
                   bottom: buildTabBar(null),
                 ),
@@ -55,6 +55,7 @@ class _AppBarWithTabsScreenState extends State<AppBarWithTabsScreen> {
   }
 
   Widget _buildListBody(String txt) {
+    print("FullScrollable, buildListBody");
     return SafeArea(
       top: false,
       bottom: false,
@@ -134,3 +135,4 @@ class _AppBarWithTabsScreenState extends State<AppBarWithTabsScreen> {
 
 /// reference ...
 /// https://www.youtube.com/watch?v=xzPXqQ-Pe2g
+/// https://www.youtube.com/watch?v=LUqDNnv_dh0&ab_channel=Flutter

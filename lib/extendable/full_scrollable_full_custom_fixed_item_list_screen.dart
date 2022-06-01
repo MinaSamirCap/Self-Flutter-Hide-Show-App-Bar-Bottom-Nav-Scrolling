@@ -149,13 +149,17 @@ class _FullScrollableFullCustomFixedItemListScreenState
   }
 
   Widget _buildContentWidget() {
+    print("FullScrollable, buildContent");
     if (widget.showCenterLoading!) {
+      print("FullScrollable, Loading");
       return _centerLoadingWidget();
     }
     if (widget.showNoData!) {
+      print("FullScrollable, No Data");
       return _noDataWidget();
     }
     if (widget.supportPaging!) {
+      print("FullScrollable, Pagination");
       return Column(
         children: [
           Expanded(
@@ -170,6 +174,7 @@ class _FullScrollableFullCustomFixedItemListScreenState
   }
 
   Widget _buildListBody() {
+    print("FullScrollable, buildListBody");
     return SafeArea(
       top: false,
       bottom: false,
